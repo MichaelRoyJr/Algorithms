@@ -1,0 +1,16 @@
+Description
+  This is an implementation of the Quick Sort algorithm that counts the number of comparisons made in sorting a list of integers.  
+  The list of integers used in the example is from a file containing the 10000 integers from 1 to 10000, in random order, contained
+  in the file QuickSort.txt.  Created using C# in the Visual Studio 2017 environment.  This folde contains the solution, 
+  QuickSortComparisonCounter.sln, as well as all necessary files to run in ths environment.  Main code is QuickSort.cs.  
+  
+Algorithm
+  Quick Sort is a sorting algorithm that works by selecting a pivot and placing each entry either before or after the pivot 
+  depending on whether the item is larger or smaller than the pivot.  It is assumed an invariant that after a sorting pass is 
+  done that all items before the pivot are smaller, and those after are larger, with no determination of order made in each segment.
+  The algorithm is called recursively on each partition of the original list until list size is 1.  All sorting is done in place on
+  the original array, so little extra memory is required.
+  As long as suitable pivots are chosen, this algorithm runs in O(n log n) time.  By suitable, the pivot must be within the middle
+  half of possible locations in the array to be sorted.  This is achieved by using the median of three method for pivot selection.
+  this method uses the median of the first, last, and middle position of the array.  Using this method cases where the array is nearly 
+  sorted, either forward or reverse, have a greatly reduced runtime, which can reach O(n^2) in a worst case.
