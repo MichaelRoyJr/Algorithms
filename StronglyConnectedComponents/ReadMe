@@ -1,0 +1,16 @@
+Description
+  This is an implementation of Kosaraju's Algorithm for strongly connected component detection that counts the size of
+  the largest strongly connected components (SCC's) in a network.  In this case the network is given in a file SCC.txt
+  that contains a list of directed edges, given by an ordered pair of the nodes each edge connects.  Apologies for the
+  large file size.  Developed as a console application using Visual Studio 2017.  The final output is a list of the sizes
+  of the five largest SCC's detected in the dataset.  Contains the solution file, as well as other necessary files.  Main
+  code is in SCC.cs and also includes a class declaration Node.cs, as well as the example data.
+  
+Algorithm
+  The essence of this algorithm is applying two passes of a depth-first-traversal, also known as depth first search, or DFS
+  on a network.  The first pass uses a reversed network where all directional edges are computed in the reverse direction.
+  When DFS last visits a node a finishing time is recorded for this node.  This finishing time is an increasing integer to 
+  keep the finishing order intact.  After finishing time(f) for all nodes have been established, a second pass of DFS is run 
+  on the original, non-reversed data, using the f value as the order of node traversal.
+  Because DFS runs in linear time, O(V + E), where V is the number of vertices and E is the number of edges, the whole algorithm
+  runs in twice this, resulting in linear time complexity. 
